@@ -1,0 +1,23 @@
+doctype html
+
+- var title = 'Project title'
+
+block vars
+    
+html
+    head
+        meta(charset="utf-8")
+        meta(name="description", content="")
+        meta(name="viewport", content="width=device-width, initial-scale=1, minimal-ui")
+        title #{title}
+        link(rel="icon" type="image/png" href="favicon.png" sizes="16x16")
+        link(rel="stylesheet", href="styles/vendor.css")
+        link(rel="stylesheet", href="styles/main.css")
+        block scripts
+    body
+        include ../components/svg
+        include ../components/header
+        block content
+        include ../components/footer
+        script(src="scripts/vendor.js")
+        script(src="scripts/app.js")

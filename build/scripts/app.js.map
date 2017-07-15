@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.js"],"names":["$"],"mappings":"AAAA;;AAEAA,EAAE,YAAW,CAIZ,CAJD","file":"app.js","sourcesContent":["/*global $*/\r\n\r\n$(function() {\r\n\r\n    \r\n\r\n});"]}
