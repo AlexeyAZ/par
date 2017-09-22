@@ -1,0 +1,54 @@
+.content {
+	overflow: hidden;
+
+	&_hide {
+
+		.content__intro,
+		.content__news {
+			display: none;
+		}
+	}
+
+	&__check-age {
+		display: none;
+		position: relative;
+		width: 100%;
+		min-height: 100vh;
+		
+		&_fade {
+			transition: 0.4s;
+			transform: scale(1.1);
+			opacity: 0;
+		}
+	}
+
+	&__intro {
+		position: relative;
+		min-height: 100vh;
+    
+		&:before {
+			content: "";
+			background-color: rgba(0,0,0,0.1);
+			position: fixed;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 100%;
+			z-index: -1;
+		}
+
+		&_news {
+			background-image: url("../img/sec2-bg.jpg");
+			background-position: center top;
+			background-repeat: no-repeat;
+			background-size: cover;
+			color: white;
+			display: flex;
+			flex-flow: column;
+
+			&:before {
+				display: none;
+			}
+		}
+	}
+}

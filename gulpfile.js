@@ -8,9 +8,13 @@ const properties = {
 const plugins = {
     js: [
         'bower_components/jquery/dist/jquery.min.js',
+        'bower_components/slick-carousel/slick/slick.min.js',
+        'bower_components/webshim/js-webshim/minified/polyfiller.js',
+        'bower_components/inputmask/dist/min/jquery.inputmask.bundle.min.js',
     ],
     css: [
         'bower_components/reset-css/reset.css',
+        'bower_components/slick-carousel/slick/slick.css',
     ]
 }
 
@@ -74,6 +78,8 @@ gulp.task('vendor', function () {
     gulp.src(plugins.js)
         .pipe(concat('vendor.js'))
         .pipe(gulp.dest(properties.folders.build + '/scripts/'));
+    gulp.src(['bower_components/webshim/js-webshim/minified/shims/**/*'])
+        .pipe(gulp.dest(properties.folders.build + '/scripts/shims'))
 });
 
 gulp.task('pug', function() {
@@ -93,6 +99,13 @@ gulp.task('pug', function() {
             .pipe(bs.stream({once: true}));
     });
 });
+
+gulp.task('font-awesome', function () {
+    gulp.src('bower_components/components-font-awesome/scss/**/*.*')
+        .pipe(gulp.dest(properties.folders.src + '/styles/font-awesome'))
+    gulp.src(['bower_components/components-font-awesome/fonts/**/*.*'])
+        .pipe(gulp.dest(properties.folders.src + '/fonts/font-awesome'))
+})
 
 gulp.task('sass', function () {
     gulp.src(properties.folders.src + '/styles/main.scss')
@@ -150,8 +163,13 @@ gulp.task('video', function () {
         .pipe(gulp.dest(properties.folders.build + '/video'))
 });
 
+gulp.task('mail', function () {
+    gulp.src(properties.folders.src + '/mail/**/*.*')
+        .pipe(gulp.dest(properties.folders.build + '/mail'))
+});
+
 gulp.task('font', function () {
-    gulp.src(properties.folders.src + '/fonts/**/*.*')
+    gulp.src([properties.folders.src + '/fonts/**/*.*'])
         .pipe(gulp.dest(properties.folders.build + '/fonts'))
 });
 
@@ -170,12 +188,14 @@ gulp.task('server', function() {
 
 gulp.task('build', [
     'pug',
+    'font-awesome',
     'sass',
     'scripts',
     'lint',
     'vendor',
     'image',
     'video',
+    'mail',
     'font',
     'json',
     'svgSpriteBuild'
@@ -199,6 +219,9 @@ gulp.task('watch', function() {
     });
     watch(properties.folders.src + '/video/**/*.*', function() {
         gulp.start('video');
+    });
+    watch(properties.folders.src + '/video/**/*.*', function() {
+        gulp.start('mail');
     });
     watch(properties.folders.src + '/font/**/*.*', function() {
         gulp.start('font');

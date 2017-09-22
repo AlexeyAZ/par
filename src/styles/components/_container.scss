@@ -4,4 +4,9 @@
     margin-left: auto;
     margin-right: auto;
 	max-width: $max-width;
+
+    @include media(w768) {
+        padding-left: $side-padding-mobile;
+        padding-right: $side-padding-mobile;
+    }
 }

@@ -13,7 +13,17 @@ html {
 }
 
 body {
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-size: 16px;
     position: relative;
     line-height: 1.5;
     min-width: 320px;
+}
+
+.security-link {
+    border-bottom: 1px solid currentColor;
+
+    &:hover {
+        color: $yellow-main;
+    }
 }

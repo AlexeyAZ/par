@@ -1,0 +1,69 @@
+.posts {
+
+	&_action {
+
+	}
+
+	&_news {
+
+		.post__img {
+			order: 3;
+		}
+
+		@include media(w500) {
+			
+			.post__img {}
+		}
+	}
+}
+.post {
+	display: flex;
+	margin-bottom: 30px;
+
+	@include media(w500) {
+		display: block;
+	}
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+	
+	&__img {
+		background-image: url("https://yt3.ggpht.com/-wAQjptflV9M/AAAAAAAAAAI/AAAAAAAAAAA/wZGyk6OxSww/s900-c-k-no/photo.jpg");
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		border: 5px solid $yellow-main;
+		border-radius: 50%;
+		flex-shrink: 0;
+		margin-top: 20px;
+		height: $post-img-size;
+		width: $post-img-size;
+
+		@include media(w500) {
+			margin-bottom: 10px;
+		}
+	}
+
+	&__info {
+		flex-shrink: 1;
+		padding: 0 40px;
+		width: calc(100% - #{$post-img-size});
+
+		@include media(w768) {
+			padding: 0 20px;
+		}
+
+		@include media(w500) {
+			padding: 0;
+			width: auto;
+		}
+	}
+
+	&__title {
+		color: $yellow-main;
+		font-size: 18px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+}

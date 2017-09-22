@@ -1,3 +1,142 @@
 .header {
-	
+	//margin-bottom: 20px;
+	padding-top: $header-mt-pc;
+	// position: fixed;
+	// top: 0;
+	// left: 0;
+	//height: $header-max-height-pc;
+	//width: 100%;
+
+	@include media(w1024) {
+		//height: $header-max-height-tablet;
+	}
+
+	@include media(w768) {
+		//margin-bottom: 20px;
+		padding-top: $header-mt-mobile;
+		position: static;
+	}
+
+	&__container {
+		display: flex;
+		justify-content: space-between;
+
+		@include media(w768) {
+			display: block;
+		}
+	}
+
+	&__logo {
+
+		@include media(w768) {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+	}
+
+	&__logo-img {
+		height: $header-max-height-pc;
+
+		@include media(w1024) {
+			height: $header-max-height-tablet;
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex-flow: column;
+		justify-content: center;
+	}
+
+	&__info-buttons {
+		margin-bottom: 20px;
+		text-align: right;
+
+		@include media(w768) {
+			display: flex;
+			flex-flow: column;
+			align-items: center;
+			text-align: center;
+		}
+	}
+
+	&__info-btn {
+		display: inline-block;
+		font-weight: bold;
+		text-transform: uppercase;
+		margin-left: 40px;
+		padding-bottom: 10px;
+		position: relative;
+
+		&:after {
+			content: "";
+			transition: $trans;
+			background-color: $yellow-main;
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			height: 4px;
+			width: 0;
+		}
+
+		&:hover {
+
+			&:after {
+				left: 0;
+				width: 100%;
+			}
+		}
+
+		@include media(w768) {
+			margin-left: 0;
+			margin-bottom: 20px;
+		}
+	}
+
+	&__info-social {
+		display: flex;
+		justify-content: flex-end;
+		font-size: 25px;
+
+		@include media(w768) {
+			display: block;
+			margin-top: -10px;
+			text-align: center;
+		}
+	}
+
+	&__social-list {
+		display: flex;
+
+		@include media(w768) {
+			justify-content: center;
+			margin-bottom: 10px;
+		}
+	}
+
+	&__social-item {
+		margin-right: 20px;
+
+		@include media(w768) {
+			margin: 0 10px;
+		}
+	}
+
+	&__social-link {
+		transition: $trans;
+		color: $yellow-main;
+		
+		&:hover {
+			color: white;
+		}
+	}
+
+	&__info-phone {
+		transition: $trans;
+		color: $yellow-main;
+		
+		&:hover {
+			color: white;
+		}
+	}
 }

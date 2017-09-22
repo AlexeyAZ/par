@@ -1,0 +1,296 @@
+.gallery {
+	outline: none;
+	color: white;
+	padding-top: 50px;
+	padding-bottom: 30px;
+	position: relative;
+
+	@include media(w1366) {
+		padding-top: 20px;
+	}
+
+	&__container {
+		transition: $trans;
+		opacity: 0;
+
+		&_init {
+			opacity: 1;
+		}
+	}
+
+	&__arrow {
+		transform: translateY(-50%) scaleY(2);
+		transition: $trans;
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		height: 40px;
+		width: 40px;
+
+		&_left {
+			left: 0;
+		}
+
+		&_right {
+			right: 0;
+		}
+
+		&:before {
+			content: "";
+			border-width: 2px;
+			border-color: transparent;
+			border-style: solid;
+			position: absolute;
+			height: 100%;
+			width: 100%;
+		}
+
+		&_right {
+			
+			&:before {
+				transform: rotate(45deg);
+				border-top-color: $yellow-main;
+				border-right-color: $yellow-main;
+			}
+		}
+
+		&_left {
+			
+			&:before {
+				transform: rotate(-45deg);
+				border-top-color: $yellow-main;
+				border-left-color: $yellow-main;
+			}
+		}
+
+		&:hover {
+			transform: translateY(-50%) scale(1.2, 1.8);
+		}
+	}
+
+	&__item {
+		outline: none;
+	}
+
+	&__intro-text {
+		text-align: center;
+		margin-bottom: 50px;
+
+		@include media(w1366) {
+			margin-bottom: 20px;
+		}
+
+		p {
+			margin-bottom: 30px;
+			
+			@include media(w1366) {
+				margin-bottom: 20px;
+			}
+		}
+	}
+
+	&__nav {
+		display: flex;
+		justify-content: space-between;
+		text-align: center;
+
+		@include media(w768) {
+			display: block;
+		}
+	}
+
+	&__nav-item {
+		border: 4px solid $yellow-main;
+		cursor: pointer;
+		padding: 20px;
+		position: relative;
+		width: 45%;
+
+		&:before {
+			transition: $trans;
+			content: "";
+			background-color: $yellow-main;
+			position: absolute;
+			top: 0;
+			height: 100%;
+			width: 0;
+			z-index: -1;
+		}
+
+		&_left {
+
+			&:before {
+				right: 0;
+			}
+		}
+
+		&_right {
+
+			&:before {
+				left: 0;
+			}
+		}
+
+		&:hover {
+
+			&:before {
+				width: 100%;
+			}
+
+			.gallery__nav-title,
+			.gallery__nav-text {
+				color: black;
+			}
+		}
+
+		@include media(w768) {
+			margin-bottom: 30px;
+			width: auto;
+		}
+	}
+
+	&__nav-title {
+		transition: $trans;
+		color: $yellow-main;
+		font-weight: bold;
+		font-size: 19px;
+		text-transform: uppercase;
+		margin-bottom: 1em;
+	}
+
+	&__nav-text {
+		transition: $trans;
+	}
+
+	&__row {
+		display: flex;
+		align-items: center;
+
+		&_left {
+			
+		}
+
+		&_right {
+			padding-left: 40px;
+		}
+
+		@include media(w1024) {
+			display: block;
+		}
+	}
+
+	&__col {
+		position: relative;
+		width: 50%;
+
+		&_text {
+			padding-right: 40px;
+
+			@include media(w1024) {
+				margin-bottom: 30px;
+				padding-right: 0;
+			}
+		}
+
+		&_arrow-left {
+			padding-left: 40px;
+		}
+
+		&_arrow-right {
+			padding-right: 40px;
+		}
+
+		@include media(w1024) {
+			width: auto;
+		}
+	}
+
+	&__text {
+		margin-bottom: 20px;
+	}
+
+	&__info-phone {
+		transition: $trans;
+		font-size: 24px;
+		font-weight: bold;
+		
+		&:hover {
+			color: $yellow-main;
+		}
+	}
+
+	&__form {
+
+		@include media(w1024) {
+			max-width: 500px;
+		}
+	}
+
+	&__form-label {
+		display: block;
+		color: $yellow-main;
+		font-weight: bold;
+		font-size: 14px;
+		margin-bottom: 20px;
+
+		&_security {
+			color: white;
+			font-weight: normal;
+		}
+	}
+
+	&__form-title {
+		margin-bottom: 5px;
+	}
+
+	&__form-input {
+		border: 1px solid transparent;
+		border-radius: 4px;
+		outline: none;
+		padding: 10px 20px;
+		font-size: 16px;
+		width: 100%;
+
+		&:focus {
+			border-color: $yellow-main;
+		}
+	}
+
+	&__form-btn {
+		transition: $trans;
+		background-color: transparent;
+		border: 3px solid $yellow-main;
+		color: white;
+		cursor: pointer;
+		font-weight: bold;
+		font-size: 16px;
+		text-transform: uppercase;
+		margin-bottom: 20px;
+		padding: 20px 30px;
+		position: relative;
+
+		&:before {
+			content: "";
+			transition: $trans;
+			background-color: $yellow-main;
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 100%;
+			width: 0;
+			z-index: -1;
+		}
+
+		&:hover {
+			color: black;
+
+			&:before {
+				width: 100%;
+			}
+		}
+
+		@include media(w768) {
+			width: 100%;
+		}
+	}
+}

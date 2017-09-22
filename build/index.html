@@ -4,33 +4,195 @@
     <meta charset="utf-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
-    <title>Main</title>
+    <title>PRO Дым</title><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
     <link rel="icon" type="image/png" href="favicon.png" sizes="16x16">
     <link rel="stylesheet" href="styles/vendor.css">
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none;"></svg>
-    <header class="header">
-      <div class="container">
-        <div class="header__logo"><a class="header__logo-link" href=""><img class="header__logo-img" src="img/logo.png" alt=""></a></div>
-        <div class="header__info">
-          <div class="header__info-buttons"><a class="header__info-btn" href="">новости и акции</a><a class="header__info-btn" href="">заказть звонок</a></div>
-          <div class="header__info-social">
-            <ul class="header__social-list">
-              <li class="header__social-item"><a class="header__social-link" href=""></a></li>
-            </ul><a class="header__info-phone" href="89274435181">8 (927) 443-51-81</a>
-          </div>
-        </div>
-      </div>
-    </header>
-    <video class="video" id="my-video" autoplay loop muted playsinline poster="images/video-bg.jpg">
+    <video class="video" id="video" autoplay loop muted playsinline poster="img/video-bg.jpg">
       <source src="video/bg.mp4" type="video/mp4">
       <source src="video/bg.webm" type="video/webm">
       <source src="video/bg.ogv" type="video/ogg">
     </video>
-    <div class="content"></div>
-    <footer class="footer"></footer>
+    <div class="content content_hide content_index">
+      <div class="content__check-age">
+        <div class="check-age">
+          <p class="check-age__title">Вам есть 18 лет?</p>
+          <form class="check-age__form">
+            <button class="check-age__form-btn check-age__form-btn_left js-check-age-confirm">да</button>
+            <button class="check-age__form-btn check-age__form-btn_right js-check-age-failure">нет</button>
+          </form>
+        </div>
+      </div>
+      <div class="content__intro">
+        <header class="header">
+          <div class="container header__container">
+            <div class="header__logo"><a class="header__logo-link" href="/"><img class="header__logo-img" src="img/logo.png" alt=""></a></div>
+            <div class="header__info">
+              <div class="header__info-buttons"><a class="header__info-btn js-scroll-link" href="#actions">новости и акции</a>
+                <!--a(href="").header__info-btn.заказать звонок
+                -->
+              </div>
+              <div class="header__info-social">
+                <ul class="header__social-list">
+                  <li class="header__social-item"><a class="header__social-link" href="https://www.instagram.com/prodymani/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                  <li class="header__social-item"><a class="header__social-link" href="https://vk.com/pro_kalyany" target="_blank"><i class="fa fa-vk"></i></a></li>
+                  <li class="header__social-item"><a class="header__social-link" href="" target="_blank"><i class="fa fa-telegram"></i></a></li>
+                  <li class="header__social-item"><a class="header__social-link" href="whatsapp://send?phone=79061118460" target="_blank"><i class="fa fa-whatsapp"></i></a></li>
+                  <li class="header__social-item"><a class="header__social-link" href="tel:88432975656" target=""><i class="fa fa-phone-square"></i></a></li>
+                </ul><a class="header__info-phone" href="tel:88432975656">297-56-56</a>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div class="gallery" id="gallery">
+          <div class="gallery__container js-gallery">
+            <div class="gallery__item">
+              <div class="container">
+                <div class="gallery__row">
+                  <div class="gallery__col gallery__col_text">
+                    <div class="gallery__text">
+                      <p>Кальян на дом — услуга, получившая широкое распространение в последнее время.</p>
+                      <ul class="gallery__list">
+                        <li class="gallery__list-item">— У тебя нет своего кальяна</li>
+                        <li class="gallery__list-item">— Лень готовить кальян самому, мыть колбы и шахты, разжигать угли и т.п</li>
+                        <li class="gallery__list-item">— Хочешь больше времени уделить своей девушке или своим гостям</li>
+                        <li class="gallery__list-item">— Хочешь порадовать себя качественным кальяном</li>
+                      </ul>
+                      <p>Компания «PRОДЫМ» — к Вашим услугам! Кальян на дом всего за 500 рублей!!!</p>
+                    </div>
+                    <div class="gallery__info">
+                      <p>Лень писать — просто звони:</p><a class="gallery__info-phone" href="tel:88432975656">297-56-56</a>
+                    </div>
+                  </div>
+                  <div class="gallery__col gallery__col_arrow-right">
+                    <div class="gallery__arrow gallery__arrow_right js-arrow-goto-center"></div>
+                    <form class="gallery__form">
+                      <label class="gallery__form-label">
+                        <p class="gallery__form-title">Как к Вам обращаться</p>
+                        <input class="gallery__form-input" type="text" name="name" placeholder="Имя, Фамилия">
+                      </label>
+                      <label class="gallery__form-label">
+                        <p class="gallery__form-title">Ваш номер телефона</p>
+                        <input class="gallery__form-input" type="tel" name="phone" placeholder="+7 (999) 999-99-99" required>
+                      </label>
+                      <label class="gallery__form-label">
+                        <p class="gallery__form-title">Адрес доставки</p>
+                        <input class="gallery__form-input" type="text" name="adress" placeholder="пр.Ф.Амирхана, 55-64">
+                      </label>
+                      <button class="gallery__form-btn" type="submit">отправить заявку</button>
+                      <label class="gallery__form-label gallery__form-label_security">
+                        <input type="checkbox" checked required><span>
+                          Нажимая кнопку «Отправить заявку», я даю согласие на обработку персональных данных и соглашаюсь с
+                          <a class="security-link" href="">политикой конфиденциальности</a></span>
+                      </label>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="gallery__item">
+              <div class="container">
+                <div class="gallery__intro-text">
+                  <p>Дорогие друзья и гости! Предлагаем Вам услуги кальянного сервиса от компании «PRОДЫМ» — Вы можете заказать кальянного мастера с выездом на дом, либо на организуемую вечеринку в заведении, на даче или загородом на природе.</p>
+                  <p>Если Вы — владелец ресторана, кафе или иного заведения, предлагаем организовать с нами в партнерстве на постоянной основе работу кальянных мастеров с посетителями и гостями Вашего заведения. У нас уже есть положительный опыт и большое число гостей, привлеченных в заведение именно качеством наших кальянов!!!</p>
+                  <p>Мы — профессионалы!!! Позвольте порадовать Вас наивкуснейшим ароматным дымом!</p>
+                </div>
+                <div class="gallery__nav">
+                  <div class="gallery__nav-item gallery__nav-item_left js-gallery-nav-left">
+                    <div class="gallery__nav-title">Кальян на дом</div>
+                    <p class="gallery__nav-text">Вызови кальянного мастера к себе домой</p>
+                  </div>
+                  <div class="gallery__nav-item gallery__nav-item_right js-gallery-nav-right">
+                    <div class="gallery__nav-title">Кальян-аутсорсинг</div>
+                    <p class="gallery__nav-text">Порадуй гостей своего заведения качественными кальянами</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="gallery__item">
+              <div class="container">
+                <div class="gallery__row">
+                  <div class="gallery__col gallery__col_text gallery__col_arrow-left">
+                    <div class="gallery__arrow gallery__arrow_left js-arrow-goto-center"></div>
+                    <div class="gallery__text">
+                      <p>Кальян-аутсорсинг позволяет решить целый ряд проблем и вопросов для владельцев и управляющих ресторанов и кафе. Так, заключив с нами договор на аутсорсинг кальянов в Вашем заведении, Вы будете получать чистую прибыль, без необходимости неусыпно следить за закупками, за качеством кальянного сервиса и за исполнителями! Кроме того Вы избавите себя от воровства, лени и недостаточной доброжелательности соответствующего персонала! У нас уже есть успешный опыт партнерства с заведениями Казани, в которых до 30% новых клиентов приходят ИМЕННО ДЛЯ ТОГО, чтобы порадовать себя нашим ароматным дымом. Свяжитесь с нами и в течение дня мы подъедем для обсуждения условий партнерства. Как правило, формат работы — 50/50. Мы умеем находить оптимальные условия сотрудничества.</p>
+                    </div>
+                    <div class="gallery__info">
+                      <p>Не терпится поскорее обсудить условия партнерство — просто звоните:</p><a class="gallery__info-phone" href="tel:88432975656">297-56-56</a>
+                    </div>
+                  </div>
+                  <div class="gallery__col">
+                    <form class="gallery__form">
+                      <label class="gallery__form-label">
+                        <p class="gallery__form-title">Как к Вам обращаться</p>
+                        <input class="gallery__form-input" type="text" name="name" placeholder="Имя, Фамилия">
+                      </label>
+                      <label class="gallery__form-label">
+                        <p class="gallery__form-title">Ваш номер телефона</p>
+                        <input class="gallery__form-input" type="tel" name="phone" placeholder="+7 (999) 999-99-99" required>
+                      </label>
+                      <label class="gallery__form-label">
+                        <p class="gallery__form-title">Адрес Вашего заведения</p>
+                        <input class="gallery__form-input" type="text" name="adress" placeholder="пр.Ф.Амирхана, 55-64">
+                      </label>
+                      <button class="gallery__form-btn" type="submit">отправить заявку</button>
+                      <label class="gallery__form-label gallery__form-label_security">
+                        <input type="checkbox" checked required><span>
+                          Нажимая кнопку «Отправить заявку», я даю согласие на обработку персональных данных и соглашаюсь с
+                          <a class="security-link" href="">политикой конфиденциальности</a></span>
+                      </label>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content__news">
+        <div class="sec2" id="actions">
+          <div class="container sec2__container">
+            <div class="sec2__posts">
+              <div class="sec2__row">
+                <div class="sec2__col sec2__col_action">
+                  <div class="sec2__col-title"><a class="sec2__col-link" href="actions.html" target="_blank">акции</a></div>
+                  <div class="posts posts_action js-actions">
+                    <!--div.post
+                    div.post__img
+                    div.post__info
+                    	div.post__title
+                    		p.
+                    			новость
+                    	div.post__text.
+                    		Текст акции, для детей старше 18 лет. Текст акции, для детей старше 18 лет. Текст акции, для детей старше 18 лет. Текст акции, для детей старше 18 лет. Текст акции, для детей старше 18 лет.
+                    -->
+                  </div>
+                </div>
+                <div class="sec2__col">
+                  <div class="sec2__col-title sec2__col-title_news"><a class="sec2__col-link" href="news.html" target="_blank">новости</a></div>
+                  <div class="posts posts_news js-news"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <footer class="footer">
+            <div class="container footer__container">
+              <div class="footer__item">
+                <p class="footer__title">© PRОДЫМ, 2017.</p>
+                <p class="footer__text">Информация на сайте представлена исключительно для ознакомления. Мы не рекламируем табак и курительные принадлежности.</p>
+              </div>
+              <div class="footer__item footer__item_right">
+                <p class="footer__title"><a class="footer__link" href="tel:88432975656">297-56-56</a></p>
+                <p class="footer__text">Минздрав предупреждает, курение опасно для Вашего здоровья.</p>
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </div>
     <script src="scripts/vendor.js"></script>
     <script src="scripts/app.js"></script>
   </body>

@@ -1,0 +1,67 @@
+.sec2 {
+	//background-image: url("../img/sec2-bg.jpg");
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: white;
+	padding-top: 20px;
+
+	&__container {
+		margin-bottom: 80px;
+	}
+
+	&__posts {
+		position: relative;
+
+		&:before {
+			background-color: $yellow-main;
+			transform: translateX(-50%);
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 50%;
+			height: 100%;
+			width: 4px;
+
+			@include media(w1024) {
+				content: none;
+			}
+		}
+	}
+
+	&__row {
+		display: flex;
+
+		@include media(w1024) {
+			display: block;
+		}
+	}
+
+	&__col {
+		width: 50%;
+
+		@include media(w1024) {
+			margin-bottom: 40px;
+			width: auto;
+		}
+	}
+
+	&__col-title {
+		font-weight: bold;
+		font-size: 22px;
+		text-transform: uppercase;
+		margin-bottom: 30px;
+
+		&_news {
+			text-align: right;
+
+			@include media(w500) {
+				text-align: left;
+			}
+		}
+	}
+
+	&__col-link {
+		color: $yellow-main;
+	}
+}

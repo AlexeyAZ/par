@@ -1,0 +1,102 @@
+- var galleryList = ["У тебя нет своего кальяна", "Лень готовить кальян самому, мыть колбы и шахты, разжигать угли и т.п", "Хочешь больше времени уделить своей девушке или своим гостям", "Хочешь порадовать себя качественным кальяном"];
+
+div#gallery.gallery
+	div.gallery__container.js-gallery
+		div.gallery__item
+			div.container
+				div.gallery__row
+					div.gallery__col.gallery__col_text
+						div.gallery__text
+							p.
+								Кальян на дом – услуга, получившая широкое распространение в последнее время.
+							ul.gallery__list
+								each item in galleryList
+									li.gallery__list-item.
+										- #{item}
+							p.
+								Компания «PROДЫМ» - к Вашим услугам! Кальян на дом всего за 500 рублей!!!
+						div.gallery__info
+							p.
+								Лень писать – просто звони:
+							a(href="tel:" + phoneAttr).gallery__info-phone.
+								#{phone}
+					div.gallery__col.gallery__col_arrow-right
+						div.gallery__arrow.gallery__arrow_right.js-arrow-goto-center
+						form.gallery__form
+							label.gallery__form-label
+								p.gallery__form-title.
+									Как к Вам обращаться
+								input(type="text" name="name" placeholder="Имя, Фамилия").gallery__form-input
+							label.gallery__form-label
+								p.gallery__form-title.
+									Ваш номер телефона
+								input(type="tel" name="phone" placeholder="+7 (999) 999-99-99" required).gallery__form-input
+							label.gallery__form-label
+								p.gallery__form-title.
+									Адрес доставки
+								input(type="text" name="adress" placeholder="пр.Ф.Амирхана, 55-64").gallery__form-input
+							button(type="submit").gallery__form-btn.
+								отправить заявку
+							label.gallery__form-label.gallery__form-label_security
+								input(type="checkbox" checked required)
+								span
+									|Нажимая кнопку «Отправить заявку», я даю согласие на обработку персональных данных и соглашаюсь с
+									|
+									a(href="").security-link.
+										политикой конфиденциальности
+		div.gallery__item
+			div.container
+				div.gallery__intro-text
+					p.
+						Дорогие друзья и гости! Предлагаем Вам услуги кальянного сервиса от компании «PROДЫМ» - Вы можете заказать кальянного мастера с выездом на дом, либо на организуемую вечеринку в заведении, на даче или загородом на природе.
+					p.
+						Если Вы – владелец ресторана, кафе или иного заведения, предлагаем организовать с нами в партнерстве на постоянной основе работу кальянных мастеров с посетителями и гостями Вашего заведения. У нас уже есть положительный опыт и большое число гостей, привлеченных в заведение именно качеством наших кальянов!!!
+					p.
+						Мы – профессионалы!!! Позвольте порадовать Вас наивкуснейшим ароматным дымом!
+				div.gallery__nav
+					div.gallery__nav-item.gallery__nav-item_left.js-gallery-nav-left
+						div.gallery__nav-title.
+							Кальян на дом
+						p.gallery__nav-text.
+							Вызови кальянного мастера к себе домой
+					div.gallery__nav-item.gallery__nav-item_right.js-gallery-nav-right
+						div.gallery__nav-title.
+							Кальян-аутсорсинг
+						p.gallery__nav-text.
+							Порадуй гостей своего заведения качественными кальянами
+		div.gallery__item
+			div.container
+				div.gallery__row
+					div.gallery__col.gallery__col_text.gallery__col_arrow-left
+						div.gallery__arrow.gallery__arrow_left.js-arrow-goto-center
+						div.gallery__text
+							p.
+								Кальян-аутсорсинг позволяет решить целый ряд проблем и вопросов для владельцев и управляющих ресторанов и кафе. Так, заключив с нами договор на аутсорсинг кальянов в Вашем заведении, Вы будете получать чистую прибыль, без необходимости неусыпно следить за закупками, за качеством кальянного сервиса и за исполнителями! Кроме того Вы избавите себя от воровства, лени и недостаточной доброжелательности соответствующего персонала! У нас уже есть успешный опыт партнерства с заведениями Казани, в которых до 30% новых клиентов приходят ИМЕННО ДЛЯ ТОГО, чтобы порадовать себя нашим ароматным дымом. Свяжитесь с нами и в течение дня мы подъедем для обсуждения условий партнерства. Как правило, формат работы - 50/50. Мы умеем находить оптимальные условия сотрудничества.
+						div.gallery__info
+							p.
+								Не терпится поскорее обсудить условия партнерство – просто звоните:
+							a(href="tel:" + phoneAttr).gallery__info-phone.
+								#{phone}
+					div.gallery__col
+						form.gallery__form
+							label.gallery__form-label
+								p.gallery__form-title.
+									Как к Вам обращаться
+								input(type="text" name="name" placeholder="Имя, Фамилия").gallery__form-input
+							label.gallery__form-label
+								p.gallery__form-title.
+									Ваш номер телефона
+								input(type="tel" name="phone" placeholder="+7 (999) 999-99-99" required).gallery__form-input
+							label.gallery__form-label
+								p.gallery__form-title.
+									Адрес Вашего заведения
+								input(type="text" name="adress" placeholder="пр.Ф.Амирхана, 55-64").gallery__form-input
+							button(type="submit").gallery__form-btn.
+								отправить заявку
+							label.gallery__form-label.gallery__form-label_security
+								input(type="checkbox" checked required)
+								span
+									|Нажимая кнопку «Отправить заявку», я даю согласие на обработку персональных данных и соглашаюсь с
+									|
+									a(href="").security-link.
+										политикой конфиденциальности

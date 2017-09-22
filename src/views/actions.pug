@@ -1,0 +1,13 @@
+extends templates/layout
+
+block vars
+	- var title = "PRO Дым - Акции";
+
+block content
+	div.content.content_news
+		div.content__intro.content__intro_news
+			include components/header
+			div.news__wrap
+				div.container
+					div.posts.posts_action.js-actions
+			include components/footer

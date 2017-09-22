@@ -1,17 +1,21 @@
+- var socialList = [["instagram", "https://www.instagram.com/prodymani/"], ["vk", "https://vk.com/pro_kalyany"], ["telegram", ""], ["whatsapp", "whatsapp://send?phone=79061118460"], ["phone-square", "tel:" + phoneAttr]];
+
 header.header
-    div.container
+    div.container.header__container
         div.header__logo
-            a(href="").header__logo-link
+            a(href="/").header__logo-link
                 img(src="img/logo.png", alt="").header__logo-img
         div.header__info
             div.header__info-buttons
-                a(href="").header__info-btn.
+                a(href="#actions").header__info-btn.js-scroll-link.
                     новости и акции
-                a(href="").header__info-btn.
-                    заказть звонок
+                //a(href="").header__info-btn.
+                    заказать звонок
             div.header__info-social
                 ul.header__social-list
-                    li.header__social-item
-                        a(href="").header__social-link.
-                a(href="89274435181").header__info-phone.
-                    8 (927) 443-51-81
+                    each item in socialList
+                        li.header__social-item
+                            a(href=item[1] target=(item[0] === "phone-square") ? "" :"_blank").header__social-link
+                                i(class="fa fa-" + item[0])
+                a(href="tel:" + phoneAttr).header__info-phone.
+                    #{phone}
